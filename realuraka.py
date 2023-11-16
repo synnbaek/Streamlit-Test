@@ -1,7 +1,6 @@
 import streamlit as st
 
-def main() :
-
+def main():
     # 웹사이트 아이콘과 배경 이미지 설정
     st.set_page_config(
         page_title="EPL 승부 예측기",
@@ -11,6 +10,18 @@ def main() :
     )
 
     st.title('EPL 승부 예측기')
+
+    # CSS를 사용하여 배경 색상 설정
+    st.markdown(
+        """
+        <style>
+            body {
+                background-color: red;  /* 배경 색상을 원하는 색상으로 지정하세요 */
+            }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
     # 유저한테 입력을 받는 방법
     # 1. 이름 입력 받기
@@ -28,6 +39,6 @@ def main() :
             st.success('무승부')
     else:
         st.error('정보를 입력하세요')
-        
-if __name__ == "__main__" :
+
+if __name__ == "__main__":
     main()
