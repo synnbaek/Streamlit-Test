@@ -1,11 +1,34 @@
+import os
 import streamlit as st
 
-def main() :
+# 웹사이트 아이콘과 배경 이미지 설정
+st.set_page_config(
+    page_title="EPL 승부 예측기",
+    page_icon="⚽",  # 웹사이트 아이콘 지정
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
+# 배경 이미지 URL
+background_image_url = 'https://wallpapers.com/images/featured-full/premier-league-86d2ur0b5ryesbe7.jpg'  # 배경 이미지 URL 지정
+
+# CSS를 사용하여 배경 이미지 설정
+st.markdown(
+    f"""
+    <style>
+        body {{
+            background-image: url('{background_image_url}');
+            background-size: cover;
+        }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+def main():
     st.title('EPL 승부 예측기')
 
-    # 유저한테 입력을 받는 방법
-    # 1. 이름 입력 받기
+    # 팀 이름을 입력 받음
     t1 = st.text_input('팀1을 입력하세요')
     t2 = st.text_input('팀2을 입력하세요')
 
@@ -20,6 +43,6 @@ def main() :
             st.success('무승부')
     else:
         st.error('정보를 입력하세요')
-        
-if __name__ == "__main__" :
+
+if __name__ == "__main__":
     main()
