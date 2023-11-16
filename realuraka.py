@@ -6,20 +6,23 @@ import openai
 api_key = os.environ.get("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")
 
 def main():
+    # 배경 이미지 URL
+    background_image_url = 'https://wallpapers.com/images/featured-full/premier-league-86d2ur0b5ryesbe7.jpg'
+
     # CSS를 사용하여 배경 이미지 설정
     st.markdown(
-        """
+        f"""
         <style>
-            body {
-                background-image: url('https://wallpapers.com/images/featured-full/premier-league-86d2ur0b5ryesbe7.jpg'); /* 배경 이미지 URL로 변경 */
+            body {{
+                background-image: url('{background_image_url}');
                 background-size: cover;
-            }
+            }}
         </style>
         """,
         unsafe_allow_html=True
     )
 
-    st.title('EPL 승부 예측기')s
+    st.title('EPL 승부 예측기')
 
     # 팀 이름을 입력 받음
     t1 = st.text_input('팀1을 입력하세요')
