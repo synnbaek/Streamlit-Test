@@ -9,21 +9,19 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# 배경 이미지 URL
-background_image_url = 'https://wallpapers.com/images/featured-full/premier-league-86d2ur0b5ryesbe7.jpg'  # 배경 이미지 URL 지정
-
-# CSS를 사용하여 배경 이미지 설정
-st.markdown(
-    f"""
+# CSS 스타일 설정
+custom_css = f"""
     <style>
         body {{
+            background-color: red;  /* 배경색 빨간색으로 지정 */
             background-image: url('{background_image_url}');
             background-size: cover;
+            border: 2px solid black;  /* 테두리를 검은색으로 지정 */
+            padding: 20px;  /* 테두리와 내용 간격 조절 */
         }}
     </style>
-    """,
-    unsafe_allow_html=True
-)
+"""
+st.markdown(custom_css, unsafe_allow_html=True)
 
 def main():
     st.title('EPL 승부 예측기')
