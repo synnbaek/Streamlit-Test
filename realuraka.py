@@ -1,5 +1,10 @@
 import streamlit as st
 
+api_key = os.environ.get("OPENAI_API_KEY")
+st.write("environ.get: ", api_key)
+api_key = os.getenv("OPENAI_API_KEY")
+st.write("getenv: ", api_key)
+
 def main():
     # 웹사이트 아이콘과 배경 이미지 설정
     st.set_page_config(
