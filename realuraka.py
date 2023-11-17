@@ -1,6 +1,5 @@
 import streamlit as st
 
-
 def main():
     # 웹사이트 아이콘과 배경 이미지 설정
     st.set_page_config(
